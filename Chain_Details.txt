@@ -1,0 +1,15 @@
+OXIN CHAIN (TESTNET) - FULL DETAILS
+-----------------------------------
+Network Name: Oxin Testnet
+RPC: https://testnet-rpc.oxinchain.io
+Chain ID: 4456
+Symbol: OXIN
+Explorer: https://testnet-scan.oxinchain.io
+Block Time: 5s
+Client: Geth v1.13.15
+
+SETUP INSTRUCTIONS:
+1. Open MetaMask > Settings > Networks.
+2. Add Network Manually.
+3. Input the details above.
+4. Start transacting on Oxin Chain.
