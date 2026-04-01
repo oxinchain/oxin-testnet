@@ -29,7 +29,8 @@ Consensus Engine: Proof of Stake (PoS)
 ---------------------------------------------------------
 Since a validator needs 24/7 uptime, you MUST rent a Linux Virtual Private Server (VPS). Do not run this on your personal Windows/Mac computer as internet drops will result in penalties.
 
-* Minimum Specs: 4 Core CPU, 8 GB RAM, 100 GB SSD/NVMe.
+* Minimum Specs: 2 Core CPU, 4 GB RAM, 40-50 GB SSD/NVMe.
+* Recomended Specs: 4/8 Core CPU, 48/12 GB RAM, 100/250 GB SSD/NVMe.
 * Recommended OS: Ubuntu 22.04 LTS or 24.04 LTS.
 * VPS Providers: Contabo, DigitalOcean, Hetzner, Vultr (~$5 to $10/month).
 
