@@ -2,7 +2,7 @@
           💎 OXIN CHAIN (TESTNET 2.0) 💎
     OFFICIAL POS VALIDATOR SETUP & REWARD GUIDE
 =========================================================
-Secure the network, run a node, and earn deflationary block rewards.
+Welcome to the Oxin PoS Network. Secure the network, run a node, and earn deflationary block rewards.
 
 ---------------------------------------------------------
 1. NETWORK SPECIFICATIONS (Add to MetaMask)
@@ -19,54 +19,62 @@ Consensus Engine: Proof of Stake (PoS)
 2. VALIDATOR ECONOMICS (Rewards & Benefits)
 ---------------------------------------------------------
 * Block Rewards: Earn 0.0035 OXIN for every block you help validate.
-* Transaction Fees: Validators receive priority fees (tips) from all transactions.
-* Burn Mechanism: 2% of transaction base fees are burned (EIP-1559), increasing token scarcity.
+* Transaction Fees: Validators receive priority fees (tips) from all transactions in their blocks.
+* Burn Mechanism: 2% of transaction base fees are burned (EIP-1559), increasing token scarcity and value.
 * Halving Cycle: Rewards are reduced by 50% every 4 years to control inflation.
-* Entry Limit: Minimum stake of 1,000 OXIN is required to activate a validator.
+* Entry Limit: A minimum stake of 1,000 OXIN is required to activate your validator status.
 
 ---------------------------------------------------------
-3. HARDWARE REQUIREMENTS
+3. HARDWARE & SERVER REQUIREMENTS
 ---------------------------------------------------------
-* CPU: 4 Cores (Minimum)
-* RAM: 8 GB (Minimum)
-* Storage: 100 GB SSD/NVMe
-* OS: Ubuntu 22.04 LTS or 24.04 LTS
+Since a validator needs 24/7 uptime, you MUST rent a Linux Virtual Private Server (VPS). Do not run this on your personal Windows/Mac computer as internet drops will result in penalties.
+
+* Minimum Specs: 4 Core CPU, 8 GB RAM, 100 GB SSD/NVMe.
+* Recommended OS: Ubuntu 22.04 LTS or 24.04 LTS.
+* VPS Providers: Contabo, DigitalOcean, Hetzner, Vultr (~$5 to $10/month).
+
+How to connect to your VPS:
+* Windows Users: Open 'Command Prompt' or 'PowerShell'.
+* Mac Users: Open the 'Terminal' app.
+* Command to connect: ssh root@YOUR_VPS_IP
+(Press Enter, type your VPS password, and press Enter again).
 
 ---------------------------------------------------------
-4. STEP-BY-STEP SETUP
+4. STEP-BY-STEP NODE SETUP
 ---------------------------------------------------------
 
 PHASE 1: SYSTEM PREPARATION
-Update your system and install Docker:
+Update your server and install Docker (the engine that runs the node):
 -------------------------------------------
 sudo apt update && sudo apt upgrade -y
 sudo apt install docker.io docker-compose -y
 sudo systemctl enable --now docker
 
-PHASE 2: DIRECTORY & SECURITY SETUP
-Create the required folder structure and the JWT secret:
+PHASE 2: DIRECTORY & SECURITY SETUP (CRITICAL)
+Create the required folders and a secure JWT secret. 
+[SECURITY WARNING]: The JWT secret is generated locally on your server. NEVER share this file with anyone. It secures the connection between your Execution and Consensus layers.
 -------------------------------------------
 mkdir -p ~/ox-testnet/execution ~/ox-testnet/consensus ~/ox-testnet/jwt
 openssl rand -hex 32 | tr -d "\n" > "~/ox-testnet/jwt/jwtsecret"
 
-PHASE 3: GENESIS CONFIGURATION
-Download and extract the official Oxin genesis files:
+PHASE 3: DOWNLOAD PUBLIC GENESIS CONFIGURATION
+Download the safe, public genesis files required to sync with the Oxin Chain:
 -------------------------------------------
 cd ~/ox-testnet
-curl -L https://raw.githubusercontent.com/oxinchain/oxin-testnet/main/oxin-genesis-files.tar.gz -o oxin-genesis.tar.gz
-tar -xzvf oxin-genesis.tar.gz
+curl -L https://raw.githubusercontent.com/oxinchain/oxin-testnet/main/oxin-public-genesis.tar.gz -o oxin-public-genesis.tar.gz
+tar -xzvf oxin-public-genesis.tar.gz
 
 PHASE 4: INITIALIZE EXECUTION ENGINE
-Initialize the Geth database:
+Initialize the Geth database with the Genesis rules:
 -------------------------------------------
 docker run --rm -v $(pwd)/execution:/root/.ethereum ethereum/client-go:v1.13.14 init /root/.ethereum/genesis.json
 
 PHASE 5: LAUNCH DOCKER-COMPOSE
-Create a 'docker-compose.yml' file:
+Create your configuration file.
 -------------------------------------------
 nano docker-compose.yml
 
-(Paste the following configuration. Replace 0xYOUR_WALLET_ADDRESS with your actual address to receive fees.)
+(Copy and paste the entire block below into the editor. IMPORTANT: Find '0xYOUR_WALLET_ADDRESS' at the bottom and replace it with your actual MetaMask wallet address where you want to receive your OXIN rewards.)
 
 services:
   execution:
@@ -129,14 +137,23 @@ services:
       - --beacon-rpc-provider=consensus:4000
       - --suggested-fee-recipient=0xYOUR_WALLET_ADDRESS
 
----------------------------------------------------------
-5. RUN & MONITOR
----------------------------------------------------------
-Start the node:
-`docker compose up -d`
+(To save and exit nano: Press CTRL+X, then type Y, and press ENTER).
 
-Check peer count and sync status:
-`curl -X POST http://127.0.0.1:8546 -H "Content-Type: application/json" --data '{"jsonrpc":"2.0","method":"net_peerCount","params":[],"id":1}'`
+---------------------------------------------------------
+5. RUN & MONITOR YOUR NODE
+---------------------------------------------------------
+Start your Validator node:
+-------------------------------------------
+docker compose up -d
+
+Verify your node is connected to the network (Result should be more than 0x0):
+-------------------------------------------
+curl -X POST http://127.0.0.1:8546 -H "Content-Type: application/json" --data '{"jsonrpc":"2.0","method":"net_peerCount","params":[],"id":1}'
+
+Check live logs to ensure everything is running smoothly:
+-------------------------------------------
+docker logs -f oxin-execution
+(Press CTRL+C to exit logs)
 
 =========================================================
           🚀 Build. Secure. Earn. OXIN PoS 2.0
