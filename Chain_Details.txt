@@ -12,7 +12,6 @@
 | **Block Time** | `12 Seconds` |
 | **Consensus Engine** | `Proof of Stake (PoS)` |
 | **Client Version** | `Geth v1.13.15 + Prysm (Beacon Chain)` |
-
 ---
 
 ### 🦊 METAMASK SETUP INSTRUCTIONS
