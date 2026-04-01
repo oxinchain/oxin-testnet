@@ -1,27 +1,38 @@
 {
-  "config": {
-    "chainId": 4456,
-    "homesteadBlock": 0,
-    "eip150Block": 0,
-    "eip155Block": 0,
-    "eip158Block": 0,
-    "byzantiumBlock": 0,
-    "constantinopleBlock": 0,
-    "petersburgBlock": 0,
-    "istanbulBlock": 0,
-    "berlinBlock": 0,
-    "londonBlock": 0,
-    "clique": {
-      "period": 5,
-      "epoch": 30000
-    }
-  },
-  "difficulty": "1",
-  "gasLimit": "80000000",
-  "extradata": "0x00000000000000000000000000000000000000000000000000000000000000007079415BFDc930B9955BB5C94861f0478065095e9BAE474A45F30240633058c81053b6E20d0C26bfd949e2537B98Ba3b4dd02F87612FC78923041FeC25DEE27Bbb876d4CbbCcc76301ddb5A1F17E8EE7D2a6173345735c618a22Ab1da542B862663Dccc20000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
-  "alloc": {
-    "551874230a7e0bddfce32F5998Aaf1C58aEeFe7a": {
-      "balance": "1000000000000000000000000000"
-    }
-  }
+	"config": {
+		"chainId": 4456,
+		"homesteadBlock": 0,
+		"eip150Block": 0,
+		"eip155Block": 0,
+		"eip158Block": 0,
+		"byzantiumBlock": 0,
+		"constantinopleBlock": 0,
+		"petersburgBlock": 0,
+		"istanbulBlock": 0,
+		"berlinBlock": 0,
+		"londonBlock": 0,
+		"mergeNetsplitBlock": 0,
+		"shanghaiTime": 1775038612,
+		"cancunTime": 1775038612,
+		"terminalTotalDifficulty": 0,
+		"terminalTotalDifficultyPassed": true
+	},
+	"nonce": "0x0",
+	"timestamp": "0x69ccf094",
+	"extraData": "0x0000000000000000000000000000000000000000000000000000000000000000",
+	"gasLimit": "0x1c9c380",
+	"difficulty": "0x0",
+	"mixHash": "0x0000000000000000000000000000000000000000000000000000000000000000",
+	"coinbase": "0x0000000000000000000000000000000000000000",
+	"alloc": {
+		"4d4b124b8b9fc158de41248f17472fb0432c1f64": {
+			"balance": "0x24306c4097859c43c000000"
+		}
+	},
+	"number": "0x0",
+	"gasUsed": "0x0",
+	"parentHash": "0x0000000000000000000000000000000000000000000000000000000000000000",
+	"baseFeePerGas": "0x3b9aca00",
+	"excessBlobGas": null,
+	"blobGasUsed": null
 }
