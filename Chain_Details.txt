@@ -1,15 +1,32 @@
-OXIN CHAIN (TESTNET) - FULL DETAILS
------------------------------------
-Network Name: Oxin Testnet
-RPC: https://testnet-rpc.oxinchain.io
-Chain ID: 4456
-Symbol: OXIN
-Explorer: https://testnet-scan.oxinchain.io
-Block Time: 5s
-Client: Geth v1.13.15
+# 💎 OXIN CHAIN (TESTNET 2.0) - OFFICIAL NETWORK DETAILS
+-------------------------------------------------------
 
-SETUP INSTRUCTIONS:
-1. Open MetaMask > Settings > Networks.
-2. Add Network Manually.
-3. Input the details above.
-4. Start transacting on Oxin Chain.
+### 🌐 Network Specifications
+| Field | Value |
+| :--- | :--- |
+| **Network Name** | `Oxin Testnet 2.0` |
+| **New RPC URL** | `https://testnet-rpc1.oxinchain.io` |
+| **Chain ID** | `4456` |
+| **Currency Symbol** | `OXIN` |
+| **Block Explorer** | `https://testnet-scan.oxinchain.io` |
+| **Block Time** | `12 Seconds` |
+| **Consensus Engine** | `Proof of Stake (PoS)` |
+| **Client Version** | `Geth v1.13.15 + Prysm (Beacon Chain)` |
+
+---
+
+### 🦊 METAMASK SETUP INSTRUCTIONS
+Follow these steps to connect your wallet to the **Oxin PoS 2.0** ecosystem:
+
+1. **Open MetaMask:** Click on the network selection dropdown at the top left.
+2. **Add Network:** Scroll down and click on **"Add Network"**, then select **"Add a network manually"**.
+3. **Input Details:** Carefully enter the official details provided in the table above.
+4. **Save & Connect:** Click **"Save"**. You are now connected to the most advanced, deflationary Oxin Chain!
+
+---
+
+### 🚀 NETWORK HIGHLIGHTS (For Users & Validators)
+* **Deflationary Model:** Features a **2% Burn Mechanism** on transaction base fees (EIP-1559).
+* **Validator Rewards:** Validators earn **0.0035 OXIN** per block + transaction tips.
+* **Staking Requirement:** A minimum stake of **1,000 OXIN** is required to secure the network and earn rewards.
+* **Halving Schedule:** Block rewards will be reduced by **50% every 4 years** to ensure long-term scarcity and value growth.
