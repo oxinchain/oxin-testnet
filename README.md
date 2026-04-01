@@ -35,6 +35,8 @@ Explore the Oxin ecosystem using our official tools:
 
 * 🚰 **Oxin Faucet:** Get testnet tokens to start deploying and interacting with the network.
   **[faucet.oxinchain.io](https://faucet.oxinchain.io)**
+* 🌐 **Testnet Oxin Scan:** Scan your block and transactions with Oxin Testnet 2.0 Explorer.
+  **[testnet-scan.oxinchain.io](https://testnet-scan.oxinchain.io)**
 * ⛏️ **Oxin Mining:** Participate in the Oxin mining ecosystem.
   **[mine.oxinchain.io](https://mine.oxinchain.io)**
 
